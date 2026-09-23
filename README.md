@@ -7,16 +7,21 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/GeiserX/paperless-telegram-bot/releases"><img src="https://img.shields.io/github/v/release/GeiserX/paperless-telegram-bot?style=flat-square" alt="Release"></a>
-  <a href="https://github.com/GeiserX/paperless-telegram-bot/actions/workflows/tests.yml"><img src="https://img.shields.io/github/actions/workflow/status/GeiserX/paperless-telegram-bot/tests.yml?style=flat-square&logo=github&label=tests" alt="Tests"></a>
-  <a href="https://github.com/GeiserX/paperless-telegram-bot/blob/main/LICENSE"><img src="https://img.shields.io/github/license/GeiserX/paperless-telegram-bot?style=flat-square" alt="License"></a>
-  <a href="https://hub.docker.com/r/drumsergio/paperless-telegram-bot"><img src="https://img.shields.io/docker/pulls/drumsergio/paperless-telegram-bot?style=flat-square&logo=docker" alt="Docker pulls"></a>
-  <a href="https://github.com/GeiserX/paperless-telegram-bot/stargazers"><img src="https://img.shields.io/github/stars/GeiserX/paperless-telegram-bot?style=flat-square" alt="GitHub stars"></a>
+  <a href="https://github.com/FladChris/paperless-telegram-bot/actions/workflows/docker-publish.yml"><img src="https://img.shields.io/github/actions/workflow/status/FladChris/paperless-telegram-bot/docker-publish.yml?style=flat-square&logo=github&label=build" alt="Docker Build"></a>
+  <a href="https://github.com/FladChris/paperless-telegram-bot/actions/workflows/tests.yml"><img src="https://img.shields.io/github/actions/workflow/status/FladChris/paperless-telegram-bot/tests.yml?style=flat-square&logo=github&label=tests" alt="Tests"></a>
+  <a href="https://github.com/FladChris/paperless-telegram-bot/pkgs/container/paperless-telegram-bot"><img src="https://img.shields.io/badge/ghcr.io-container-blue?style=flat-square&logo=docker" alt="GitHub Container Registry"></a>
+  <a href="https://github.com/GeiserX/paperless-telegram-bot/blob/main/LICENSE"><img src="https://img.shields.io/github/license/FladChris/paperless-telegram-bot?style=flat-square" alt="License"></a>
+  <img src="https://img.shields.io/badge/python-3.11%2B-blue?style=flat-square&logo=python&logoColor=white" alt="Python 3.11+">
 </p>
 
 ---
 
 paperless-telegram-bot is a Telegram bot for [Paperless-ngx](https://docs.paperless-ngx.com/), run in Docker. Send a photo or a file from your phone and it lands in your archive; then tag it, file it, search it and get it back, all from the chat. The bot polls Telegram and talks to Paperless over its API, so it needs no public URL, no open port and no VPN on the phone, and Paperless can stay on your LAN.
+
+> [!IMPORTANT]
+> This project is a fork of [GeiserX/paperless-telegram-bot](https://github.com/GeiserX/paperless-telegram-bot).
+>
+> It is maintained independently and uses its own container image. Changes, releases, and container images in this repository are separate from the upstream project.
 
 ## Features
 
@@ -38,7 +43,7 @@ docker run -d --name paperless-telegram-bot --restart unless-stopped \
   -e PAPERLESS_URL=http://paperless.home:8000 \
   -e PAPERLESS_TOKEN=your_paperless_api_token \
   -e TELEGRAM_ALLOWED_USERS=123456789 \
-  drumsergio/paperless-telegram-bot:v0.7.2
+  ghcr.io/fladchris/paperless-telegram-bot:latest
 ```
 
 The image runs on amd64 and arm64. Without Docker, `pip install paperless-telegram-bot` (Python 3.11 or newer) gives you the same `paperless-bot run`; [Getting started](https://geiserx.github.io/paperless-telegram-bot/getting-started/#from-pypi) has the steps.
