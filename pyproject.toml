@@ -42,9 +42,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/GeiserX/paperless-telegram-bot"
-Repository = "https://github.com/GeiserX/paperless-telegram-bot"
-Issues = "https://github.com/GeiserX/paperless-telegram-bot/issues"
+Homepage = "https://github.com/FladChris/paperless-telegram-bot"
+Repository = "https://github.com/FladChris/paperless-telegram-bot"
+Issues = "https://github.com/FladChris/paperless-telegram-bot/issues"
 
 [project.scripts]
 paperless-bot = "paperless_bot.__main__:main"

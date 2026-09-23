@@ -7,6 +7,7 @@ on:
 
 jobs:
   publish:
+    if: github.repository == 'GeiserX/paperless-telegram-bot'
     runs-on: ubuntu-latest
     env:
       PYPI_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
