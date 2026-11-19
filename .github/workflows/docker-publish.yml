@@ -6,6 +6,7 @@ on:
       - 'v*.*.*'
     branches:
       - main
+      - unraid
     paths:
       - 'Dockerfile'
       - 'requirements.txt'
@@ -57,6 +58,7 @@ jobs:
             type=semver,pattern={{raw}}
             type=raw,value=${{ github.event.inputs.tag }},enable=${{ github.event.inputs.tag != '' }}
             type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
+            type=raw,value=unraid,enable=${{ github.ref == 'refs/heads/unraid' }}
             type=sha,prefix={{branch}}-,enable=${{ github.ref != 'refs/heads/master' && !startsWith(github.ref, 'refs/tags/') }}
 
       - name: Build and push Docker image
